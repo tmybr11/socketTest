@@ -47,13 +47,19 @@
         <script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript">
 
-		  $(document).ready(function() {
+		  document.addEventListener('deviceready', function () {
 		  
+			alert('some living sign');  
+			  
 			var socket = new WebSocket('wss://echo.websocket.org');
 			
+			alert('socket instantiated');
+			alert(socket);
+			alert('milestone');
+			  
 			socket.onopen = function(evt) {
 			
-				console.log('Connection established');
+				alert('Connection established');
 			
 				socket.send('some text');
 			
@@ -65,7 +71,7 @@
 			
 			}
 			
-		  });
+		  }, false);
 		
 		</script>
     </body>
