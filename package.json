@@ -10,13 +10,11 @@
     "author": "Apache Cordova Team",
     "license": "Apache-2.0",
     "dependencies": {
-        "cordova-plugin-websocket": "^0.12.2",
         "cz.blocshop.socketsforcordova": "^1.1.0"
     },
     "cordova": {
         "plugins": {
-            "cz.blocshop.socketsforcordova": {},
-            "cordova-plugin-websocket": {}
+            "cz.blocshop.socketsforcordova": {}
         }
     }
 }
