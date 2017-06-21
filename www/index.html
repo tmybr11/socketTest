@@ -44,16 +44,27 @@
         </div>
         <script type="text/javascript" src="cordova.js"></script>
 		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-		<script type="text/javascript" src="http://cdn.socket.io/socket.io-1.0.3.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript">
 
 		  $(document).ready(function() {
 		  
-			var socket = new Socket();
-			socket.on('news', function (data) {
-				socket.emit('my other event', { my: 'data' });
-			});
+			var socket = new WebSocket('ws://echo.websocket.org');
+			
+			socket.onopen = function(evt) {
+			
+				console.log('Connection established');
+			
+				socket.send('some text');
+			
+			}
+			
+			socket.onmessage = function(evt) {
+			
+				alert(evt.data);
+			
+			}
+			
 		  });
 		
 		</script>
