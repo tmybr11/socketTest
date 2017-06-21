@@ -51,9 +51,13 @@
 		  
 			var socket = new WebSocket('wss://echo.websocket.org');
 			
+			alert('socket instantiated');
+			alert(socket);
+			alert('milestone');
+			  
 			socket.onopen = function(evt) {
 			
-				console.log('Connection established');
+				alert('Connection established');
 			
 				socket.send('some text');
 			
